@@ -11,8 +11,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.urls import reverse_lazy
 # Create your views here.
+
+@login_required
 def home(request):
-    return render(request,'dashboard/home.html')
+    return render(request,'partials/home.html')
 
 class SignUp(generic.CreateView):
     form_class = UserCreationForm
