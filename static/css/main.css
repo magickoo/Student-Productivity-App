@@ -30,12 +30,18 @@ footer {
 }
 
 
-.card-header:hover {
+.card-header {
     background: rgb(11, 22, 83) !important;
     color: whitesmoke !important;
-    transition: 0.1s ease-in;
+    
 }
-
+.card:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+  }
+  
+  
+  
 a {
     text-decoration: none !important;
     color: black;
