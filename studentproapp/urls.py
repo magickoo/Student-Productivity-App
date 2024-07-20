@@ -22,9 +22,16 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home,name='home'),
+    
+    #auth
     path('signup',views.SignUp.as_view(), name='signup'),
     path('', auth_views.LoginView.as_view(
         template_name='registration/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'),
          name='logout'),
+    
+    #notes
+    path('notes',views.Notes, name='notes'),
+    path('delete_note/<int:pk>', views.delete_note,name="delete-note"),
+    path('notes_detail/<int:pk>', views.NotesDetailView.as_view(),name="notes-detail"),
 ]
